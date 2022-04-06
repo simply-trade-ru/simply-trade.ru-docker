@@ -55,6 +55,30 @@ services:
     #   - API_ENDPOINT=${API_ENDPOINT:-http://api:4000}
     #   - ENV_MODE=development
 
+  traders-web:
+    tty: true
+    build:
+      context: ./traders-web
+      network: ${NETWORK_NAME:-traders-web-default}
+      args: 
+        - SITE=traders-web
+        - DATABASE_URL=${NEXTJS_DATABASE_URL}
+        - SUDO_PASSWORD=${NEXTJS_SUDO_PASSWORD}
+      #   - ROLE=FRONT
+      #   - ENV_MODE=development
+      #   - endpoint=${dev_endpoint}
+      #   - API_ENDPOINT=${API_ENDPOINT}
+    volumes:
+      - ./traders-web/shared:/www/traders-web/shared
+      - ./traders-web/uploads:/www/traders-web/uploads
+    env_file: 
+      - .env
+    environment: 
+      - DATABASE_URL=${NEXTJS_DATABASE_URL}
+      - SUDO_PASSWORD=${NEXTJS_SUDO_PASSWORD}
+    #   - API_ENDPOINT=${API_ENDPOINT:-http://api:4000}
+    #   - ENV_MODE=development
+
 
   rtcmultyconnection:
     tty: true

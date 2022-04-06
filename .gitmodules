@@ -2,3 +2,6 @@
 	path = nextjs-nexus
 	url = https://github.com/prisma-cms/nextjs-nexus
 	branch = master
+[submodule "traders-web"]
+	path = traders-web
+	url = git@github.com:traders-club-mvp/traders-club.git

@@ -36,3 +36,19 @@ services:
     command: bash -c "yarn dev"
     ports:
       - 3000:3000
+
+  traders-web:
+    volumes:
+      - ./traders-web/.storybook:/www/traders-web/.storybook
+      - ./traders-web/cypress:/www/traders-web/cypress
+      - ./traders-web/e2e:/www/traders-web/e2e
+      - ./traders-web/pages:/www/traders-web/pages
+      - ./traders-web/src:/www/traders-web/src
+      - ./traders-web/public:/www/traders-web/public
+      - ./traders-web/stories:/www/traders-web/stories
+      - ./traders-web/prisma:/www/traders-web/prisma
+      - ./traders-web/server:/www/traders-web/server
+      - ./traders-web/package.json:/www/traders-web/package.json
+    command: bash -c "yarn dev"
+    ports:
+      - 3100:3100

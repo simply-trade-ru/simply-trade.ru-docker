@@ -25,6 +25,15 @@ services:
         - ENV_MODE=production
     command: bash -c "yarn start"
 
+  traders-web:
+    restart: always
+    environment: 
+      ENV_MODE: production
+    build:
+      args: 
+        - ENV_MODE=production
+    command: bash -c "yarn start"
+
   rtcmultyconnection:
     restart: always
 
