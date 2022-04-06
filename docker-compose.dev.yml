@@ -51,4 +51,4 @@ services:
       - ./traders-web/package.json:/www/traders-web/package.json
     command: bash -c "yarn dev"
     ports:
-      - 3100:3100
+      - 3000:3000
