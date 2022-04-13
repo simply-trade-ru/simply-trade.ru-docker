@@ -4,4 +4,4 @@
 	branch = master
 [submodule "traders-web"]
 	path = traders-web
-	url = git@github.com:traders-club-mvp/traders-club.git
+	url = git@github.com:simply-trade-ru/simply-trade.ru.git
